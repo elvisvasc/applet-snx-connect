@@ -1,6 +1,6 @@
 {
-    "uuid": "snx@bancobrasil",
+    "uuid": "snx@elvisvasc",
     "name": "SNX Connect Util",
-    "description": "Utility for Connect or disconnect from BB VPN",
-    "contributors": "F2877688 - Elvis Cunha - Author"
+    "description": "Utility for Connect or disconnect from VPN using SNX program.",
+    "contributors": "Elvis Cunha - Author"
 }

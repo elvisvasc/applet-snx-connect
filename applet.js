@@ -11,8 +11,6 @@ const Util = imports.misc.util;
 const notificationDuration = '2000';
 const notificationTitle = 'SNX Connect Util';
 
-let UUID;
-
 function notify(message) {
     Util.spawnCommandLine("kill $(pgrep ^notify-osd$)");
     Util.spawn_async(["notify-send", "--hint=int:transient:1",  "-t", notificationDuration, `${notificationTitle}`, `${message}`]);
@@ -22,7 +20,6 @@ class MyApplet extends Applet.IconApplet {
     constructor(metadata, orientation, panelHeight, instanceId) {
         super(orientation, panelHeight, instanceId);
 
-        UUID = metadata.uuid;
         this.metadata = metadata;
         this.orientation = orientation;
     
@@ -36,7 +33,7 @@ class MyApplet extends Applet.IconApplet {
 
         this.set_applet_icon_symbolic_name("channel-insecure-symbolic");
 
-        this.set_applet_tooltip(_('Click to connect to BB VPN'));
+        this.set_applet_tooltip(_('Click to connect to VPN'));
         this.isConnected = false;
 
         this.verifySNXIsRunning();
@@ -49,7 +46,6 @@ class MyApplet extends Applet.IconApplet {
     }
 
     on_applet_clicked() {
-        global.log("Abrindo menu...")
         this.menu.toggle();
     }
 
