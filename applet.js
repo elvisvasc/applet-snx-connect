@@ -130,15 +130,11 @@ class MyApplet extends Applet.IconApplet {
                 currentIcon = "channel-insecure-symbolic";
         }
 
-
         this.set_applet_icon_symbolic_name(currentIcon);
     }
-
 }
-
 
 function main(metadata, orientation, panelHeight, instanceId) {
     let myApplet = new MyApplet(metadata, orientation, panelHeight, instanceId);
     return myApplet;
 }
-
