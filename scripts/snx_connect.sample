@@ -1,0 +1,21 @@
+#!/usr/bin/expect -f
+
+set SERVER "yourvpnserver.com"
+set KEYSTORE_FILE "/path/to/your_keystore"
+set KEYSTORE_PASS "abcefg"
+
+spawn snx -g -s $SERVER -c $KEYSTORE_FILE
+
+set timeout 10
+
+expect "*password:\r\n"
+
+send -- "$KEYSTORE_PASS\r"
+
+set timeout 10
+
+expect "*:\r\n"
+
+send -- "y\r"
+
+expect eof
