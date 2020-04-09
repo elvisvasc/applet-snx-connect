@@ -1,11 +1,16 @@
+/**
+ * Applet for Connect or Disconnet from a VPN using snx client for Linux.
+ *
+ * Cinnamon applet documentation: 
+ *   http://lira.epac.to:8080/doc/cinnamon/cinnamon-js
+ *   https://projects.linuxmint.com/reference/git/cinnamon-tutorials/write-applet.html
+ *
+ * @author Elvis Cunha - Brasília - DF - Brazil
+ */
+
 const Applet = imports.ui.applet;
-//const GLib = imports.gi.GLib;
-//const Gio = imports.gi.Gio;
 const St = imports.gi.St;
 const PopupMenu = imports.ui.popupMenu;
-//const Main = imports.ui.main;
-//const Mainloop = imports.mainloop;
-
 const Util = imports.misc.util;
 
 const notificationDuration = '2000';
@@ -68,7 +73,9 @@ class MyApplet extends Applet.IconApplet {
         this.setIcon("loading");
         notify("Connecting to VPN ...");
 
-        Util.spawnCommandLineAsync("gnome-terminal -- snx_conecta", () => {
+	let connectScript = this.metadata.path + "/scripts/snx_connect";
+
+        Util.spawnCommandLineAsync(`gnome-terminal -- ${connectScript}`, () => {
             this.setIcon("connected");
             notify("Succefully connected to VPN!");
             this.isConnected = true;
