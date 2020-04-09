@@ -17,3 +17,19 @@ To install the applet in Cinnamon just copy the folder to ~/.local/share/cinnamo
 Rename the folder to snx@elvisvasc
 
 Then, right click in cinnamon tool bar -> applets e you will see the applet. Click in + button to enable. A small lock will apear in the tray icon bar.
+
+## Screenshots
+
+![applet list](../master/screenshots/applets-list.jpeg)
+
+
+![applet list](../master/screenshots/trayicon-connect.jpeg)
+
+
+![applet list](../master/screenshots/trayicon-disconnect.jpeg)
+
+
+![applet list](../master/screenshots/notification.jpeg)
+
+
+![applet list](../master/screenshots/notification2.jpeg)
