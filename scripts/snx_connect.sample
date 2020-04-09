@@ -4,7 +4,7 @@ set SERVER "yourvpnserver.com"
 set KEYSTORE_FILE "/path/to/your_keystore"
 set KEYSTORE_PASS "abcefg"
 
-spawn snx -g -s $SERVER -c $KEYSTORE_FILE
+spawn snx -s $SERVER -c $KEYSTORE_FILE
 
 set timeout 10
 
