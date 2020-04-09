@@ -38,7 +38,6 @@ class MyApplet extends Applet.IconApplet {
 
         this.set_applet_icon_symbolic_name("channel-insecure-symbolic");
 
-        this.set_applet_tooltip(_('Click to connect to VPN'));
         this.isConnected = false;
 
         this.verifySNXIsRunning();
@@ -61,10 +60,12 @@ class MyApplet extends Applet.IconApplet {
             let disconnectMenuItem = new PopupMenu.PopupIconMenuItem(_("Disconnect from VPN"), "channel-insecure-symbolic", St.IconType.SYMBOLIC);
             disconnectMenuItem.connect("activate", this.disconnectFromVPN);
             this.menu.addMenuItem(disconnectMenuItem);
+  	    this.set_applet_tooltip(_('Click to disconnect from VPN'));
         } else {
             let connectMenuItem = new PopupMenu.PopupIconMenuItem(_("Connect to VPN"), "channel-secure-symbolic", St.IconType.SYMBOLIC);
             connectMenuItem.connect("activate", this.connectToVPN);
             this.menu.addMenuItem(connectMenuItem);
+            this.set_applet_tooltip(_('Click to connect to VPN'));		
         }
     }
 
